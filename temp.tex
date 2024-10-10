@@ -1,0 +1,135 @@
+
+\section{Navegación de Directorios}
+
+\subsection*{Sistema Operativo}
+
+\subsubsection*{Linux}
+\begin{itemize}
+    \item \texttt{cd /ruta/al/directorio}: Cambiar al directorio especificado.
+    \item \texttt{ls}: Listar archivos y directorios.
+    \item \texttt{ls -l}: Listar con detalles.
+    \item \texttt{ls -a}: Listar todos los archivos (incluyendo ocultos).
+\end{itemize}
+
+\subsubsection*{Windows}
+\begin{itemize}
+    \item \texttt{cd \textbackslash ruta\textbackslash al\textbackslash directorio}: Cambiar al directorio especificado.
+    \item \texttt{dir}: Listar archivos y directorios.
+\end{itemize}
+
+\section*{Visualización}
+
+\subsubsection*{Linux}
+Para visualizar en forma de árbol los directorios, instalaremos un pequeño paquete llamado \texttt{tree}:
+
+\begin{verbatim}
+sudo apt install tree
+tree /ruta/del/directorio
+\end{verbatim}
+
+A continuación, un ejemplo de la estructura de directorios:
+
+\dirtree{%
+.1 /home/sterben/Documentos/Python/.
+.2 Finanzas/.
+.3 app/.
+.4 app.py.
+.4 board.py.
+.4 temp/.
+.3 data.
+.3 data-journal.
+.3 dat.sqbpro.
+.3 INFO.txt.
+.3 main.py.
+.3 prueba.py.
+.3 temp/.
+.4 hola.txt.
+.4 temp2/.
+.2 MP3/.
+.3 list.txt.
+.3 mp3.py.
+.3 music/.
+.2 qr/.
+.3 IUqr.py.
+}
+
+\section*{Gestión de Archivos y Directorios}
+
+\subsubsection*{Linux}
+\begin{itemize}
+    \item \texttt{cp archivo destino}: Copiar un archivo.
+    \item \texttt{mv archivo destino}: Mover o renombrar un archivo.
+    \item \texttt{rm archivo}: Eliminar un archivo.
+    \item \texttt{mkdir nombre\_directorio}: Crear un nuevo directorio.
+    \item \texttt{rmdir nombre\_directorio}: Eliminar un directorio vacío.
+\end{itemize}
+
+\subsubsection*{Windows}
+\begin{itemize}
+    \item \texttt{copy archivo destino}: Copiar un archivo.
+    \item \texttt{move archivo destino}: Mover o renombrar un archivo.
+    \item \texttt{del archivo}: Eliminar un archivo.
+    \item \texttt{mkdir nombre\_directorio}: Crear un nuevo directorio.
+    \item \texttt{rmdir nombre\_directorio}: Eliminar un directorio vacío.
+\end{itemize}
+
+\section*{Visualización de Contenido}
+
+\subsubsection*{Linux}
+\begin{itemize}
+    \item \texttt{cat archivo}: Mostrar el contenido de un archivo.
+    \item \texttt{less archivo}: Ver el contenido de un archivo con paginación.
+    \item \texttt{head archivo}: Mostrar las primeras líneas de un archivo.
+    \item \texttt{tail archivo}: Mostrar las últimas líneas de un archivo.
+\end{itemize}
+
+\subsubsection*{Windows}
+\begin{itemize}
+    \item \texttt{type archivo}: Mostrar el contenido de un archivo.
+    \item \texttt{more archivo}: Ver el contenido de un archivo con paginación.
+\end{itemize}
+
+\section*{Información del Sistema}
+
+\subsubsection*{Linux}
+\begin{itemize}
+    \item \texttt{top}: Mostrar procesos en tiempo real.
+    \item \texttt{df -h}: Mostrar espacio en disco.
+    \item \texttt{free -h}: Mostrar memoria utilizada.
+\end{itemize}
+
+\subsubsection*{Windows}
+\begin{itemize}
+    \item \texttt{tasklist}: Mostrar lista de procesos en ejecución.
+    \item \texttt{systeminfo}: Mostrar información del sistema.
+    \item \texttt{wmic logicaldisk get size,freespace,caption}: Mostrar información del disco.
+\end{itemize}
+
+\section*{Red}
+
+\subsubsection*{Linux}
+\begin{itemize}
+    \item \texttt{ping direccion}: Comprobar la conectividad a una dirección.
+    \item \texttt{ifconfig}: Mostrar configuración de red (en sistemas modernos, usa \texttt{ip addr}).
+    \item \texttt{curl url}: Realizar una solicitud HTTP.
+\end{itemize}
+
+\subsubsection*{Windows}
+\begin{itemize}
+    \item \texttt{ping direccion}: Comprobar la conectividad a una dirección.
+    \item \texttt{ipconfig}: Mostrar configuración de red.
+    \item \texttt{curl url}: (disponible en Windows 10 y versiones posteriores).
+\end{itemize}
+
+\section*{Ayuda}
+
+\subsubsection*{Linux}
+\begin{itemize}
+    \item \texttt{man comando}: Mostrar el manual de un comando.
+    \item \texttt{comando --help}: Mostrar ayuda rápida para un comando.
+\end{itemize}
+
+\subsubsection*{Windows}
+\begin{itemize}
+    \item \texttt{comando /?}: Mostrar ayuda rápida para un comando.
+\end{itemize}

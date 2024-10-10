@@ -1,0 +1,8 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {chapter}{\numberline {1}Linux}{5}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Navegación entre Directorios}{5}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}Visualización}{6}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.1.2}Permisos}{7}{subsection.1.1.2}%
+\contentsline {section}{\numberline {1.2}Gestor de Archivos y Directorios}{8}{section.1.2}%
+\contentsline {chapter}{\numberline {2}Windows}{9}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Navegacion entre Directorios}{9}{section.2.1}%
