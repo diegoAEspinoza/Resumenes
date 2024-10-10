@@ -1,4 +1,5 @@
-\documentclass{article}
+\documentclass{book}
+\usepackage[utf8]{inputenc}
 \usepackage[spanish]{babel}
 \usepackage{float}
 \usepackage{amsmath}
@@ -7,12 +8,36 @@
 \usepackage[colorlinks=true, linkcolor=black, citecolor=black, urlcolor=black]{hyperref}
 \usepackage{graphicx} % Para incluir imágenes
 \usepackage{enumitem} % Para personalizar listas
+\usepackage{dirtree}
+\usepackage{listings}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{mathptmx} % Times font for text and math
+\usepackage{tikz}
+\usetikzlibrary{calc}
+
+\lstset{
+  language=bash,                    % Lenguaje de programación (bash para shell)
+  backgroundcolor=\color{lightgray}, % Color de fondo del código
+  basicstyle=\ttfamily\footnotesize, % Estilo básico de la fuente
+  keywordstyle=\color{blue},         % Color para palabras clave
+  commentstyle=\color{magenta},        % Color para comentarios
+  stringstyle=\color{red},           % Color para cadenas de texto
+  showspaces=false,                  % No mostrar espacios
+  showstringspaces=false,            % No mostrar espacios en cadenas
+  numberstyle=\tiny\color{gray},     % Estilo de los números de línea
+  breaklines=true,                   % Habilitar ajuste de líneas largas
+  frame=single,                      % Marco alrededor del código
+  captionpos=b,                      % Posición del título (abajo del código)
+  morekeywords={cd, ls, mkdir, rm,cp, mv, rmdir},
+}
+
 
 \begin{document}
-
+\input{include/cover.tex}
 \tableofcontents
-\newpage
 
+\input{linux.tex}
+\input{windows.tex}
 
 
     
