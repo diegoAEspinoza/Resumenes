@@ -325,7 +325,7 @@
                     \hline
                     &Datos sin agrupar&Datos agrupados \\ \hline
                     Población& $\mu = \sum_{i=1}^{n}\cfrac{x_i}{N}$&$\mu = \sum_{i=1}^{n}\cfrac{x_i\cdot f_i}{N}$ \\ \hline
-                    Muestra & $\bar{x} = \sum_{i=1}^{n}\cfrac{x_i}{n}$ & $\bar{x} = \sum_{i=1}^{n}\cfrac{x_i}{n}$ \\ \hline
+                    Muestra & $\bar{x} = \sum_{i=1}^{n}\cfrac{x_i}{n}$ & $\bar{x} = \sum_{i=1}^{n}\cfrac{x_i\cdot f_i}{n}$ \\ \hline
                 \end{tabular}
             \end{table}
         \subsubsection{Ejemplos}
@@ -409,7 +409,7 @@
                 \begin{tabular}{|c|c|c|c|}
                     \hline
                     & Datos sin agrupar & Datos agrupados & Abreviada \\ \hline &&&\\
-                    Población & $\sigma^2 = \cfrac{\sum_{i=1}^{N}(x_i - \mu)^2}{N}$ &$\sigma^2 = \cfrac{\sum_{i=1}^{N}(Y_i - \mu)^2\cdot f_i}{N}$ & $\sigma^2= \cfrac{\sum_{i=1}^{N}X_i^2}{N} - \mu^2$ \\ &&&\\ \hline &&&\\
+                    Población & $\sigma^2 = \cfrac{\sum_{i=1}^{N}(x_i - \mu)^2}{N}$ &$\sigma^2 = \cfrac{\sum_{i=1}^{N}(Y_i - \mu)^2\cdot f_i}{N}$ & $\sigma^2= \cfrac{\sum_{i=1}^{N}X_i^2f_i}{N} - \mu^2$ \\ &&&\\ \hline &&&\\
                     Muestra & $S^2 = \cfrac{\sum_{i=1}^{n}(x_i - \bar{x})^2}{n-1}$ & $S^2 = \cfrac{\sum_{i=1}^{n}(Y_i - \bar{x})^2\cdot f_i}{n-1}$ & \\ &&&\\\hline
                 \end{tabular}
             \end{table}
@@ -520,11 +520,73 @@
             \end{figure}
 
 \section{Probabilidades}
-    \section{Experimento}
-        Es cualquier acción o procesos que genera observaciones lo cual puede ser:
+    \subsection{Conceptos}
+        \subsubsection{\texorpdfstring{Experimento ($\xi$)}{Experimento (xi)}}
+            Es cualquier acción o procesos que genera observaciones lo cual puede ser:
+            \begin{enumerate}
+                \item\textbf{Deterministico}: Experimento que al repetirse bajo las mismas condiciones este genera los mismo resultados
+                \item \textbf{Aleatorio}: Experimento que bajo las mismas condiciones no genera siempre los mismo resultados.
+            \end{enumerate}
+        \subsubsection{\texorpdfstring{Espacio Muestral ($\Omega$)}{Espacio Muestral (Omega)}}
+            Se llama espacio muestral de $\xi$, de notado por $\Omega$, al conjunto de todos los resultados posibles del expermiento.
+            \[\xi:\quad\Omega =\{\omega_1, \omega_2, \dotsc,\omega_n\}\]
+        \subsubsection{Suceso o Evento (A, B, C, ...)}
+            Es cualquier subconjunto del espacio muestral $\Omega$. Contiene resultados de un expermiento aleatorio que tienen una caracteristica particular. 
+            \subsubsection{Operaciones con Eventos}
+                \begin{enumerate}
+                    \item\textbf{Union}: $A\cup B = \{w\in\Omega | w\in A \land w\in B\}$
+                    \item\textbf{Intersección}: $A\cap B = \{w\in\Omega | w\in A \lor w\in B\}$
+                        \begin{itemize}
+                            \item\textbf{$A\cap B = \emptyset$, se dice que los eventos son excluenyes o disjuntos}
+                        \end{itemize}
+                    \item\textbf{Complemento}: $\bar{A}=\{w\in\Omega | w\notin A\}$
+                \end{enumerate}
+    
+    
+    
+    \subsection{Enfoques de la Probabilidad}
+        \subsubsection{Probabilidad Clásica}
+            \[P(E) = \cfrac{\#\text{Casos a favor de E}}{\#\text{Casos posibles}} = \cfrac{n(E)}{n(\Omega)}\]
+        
+        \subsubsection*{Teoremas de Probabilidades}
         \begin{enumerate}
-            \item\textbf{Deterministico}: Experimento que al repetirse bajo las mismas condiciones este genera los mismo resultados
-            \item \textbf{Aleatorio}: Experimento que bajo las mismas condiciones no genera siempre los mismo resultados.
+            \item $0\leq P(E) \leq 1$
+            \item $P(\emptyset) = 0 \quad\land\quad P(\Omega)=1$
+            \item $P(\bar{E})=1-P(E)$
+            \item $P(E-F)= P(E)-P(E\cap F)$
+            \item $P(E\cup F) = P(E)+P(F)\quad si:\quad E\cap F = \emptyset$
+            \item $P(E\cup F) = P(E)+P(F) - P(E\cap F)\quad si:\quad E\cap F \neq \emptyset$
+            \item $P(E)\leq P(F)\quad Si:\quad E\subseteq F$
         \end{enumerate}
-    \section{Espacio Muestral}
+        \subsubsection*{Probabilidad Condicional}
+            \[P(B|A) =\cfrac{P(B\cap A)}{P(A)}\]
+            Si son dos eventos independientes tenemos:
+            \[P(A|B) = P(A)\quad\land\quad P(A\cap B) = P(A)\cdot P(B)\]
+    
+    \subsection{Principo de Multiplicación}
+        Este principio es útil si es de interés calcular la probabilidad de que ocurran los n eventos de manera simultánea.
+        \begin{itemize}
+            \item Para dos eventos  \[P(A\cap B)= P(A)P(B|A)\]
+            \item Para n eventos \[P(\bigcap_{i=1}^{n}A_i) = P(A_1)\prod_{i=2}^{n}P(A_i| \bigcap_{j=1}^{i-1}A_j)\]
+        \end{itemize}
+    
+    \subsection{Teorema de Porbabilidad Total}
+        Sean \( A_1, A_2, \ldots, A_n \) una colección de eventos mutuamente excluyentes con probabilidades conocidas y cuya unión es el espacio muestral, es decir:
+        \[\Omega = A_1 \cup A_2 \cup \cdots \cup A_n.\]
+        Sea \( A \) un evento cualquiera que satisface:
+        \[A = (A \cap A_1) \cup (A \cap A_2) \cup \cdots \cup (A \cap A_n)\]
+        con probabilidades condicionales conocidas \( P(A | A_i) \); \( i = 1, 2, \ldots, n \). Entonces, la probabilidad del evento \( A \) se calcula de la siguiente manera:
+        \[P(A) = P(A_1) \times P(A | A_1) + P(A_2) \times P(A | A_2) + \cdots + P(A_n) \times P(A | A_n).\]
+        Esta probabilidad es conocida como la probabilidad total del evento \( A \).
+    \subsection{Teorema de Bayes}
+        Sean \( A, A_1, A_2, \ldots, A_n \) una colección de eventos que satisfacen todas las condiciones del teorema anterior. Ahora, suponga que es de interés calcular la probabilidad de que ocurra el evento \( A_i \) dado que ocurrió el evento \( A \). Entonces se cumple que:
+        \[P(A_i \cap A) = P(A_i | A) \cdot P(A)\]
+        De lo cual se deduce que:
+        \[P(A_i | A) = \frac{P(A_i \cap A)}{P(A)}\]
+        Si aplicamos la probabilidad total del evento \( A \), obtenemos:
+        \[P(A) = P(A_1) \times P(A | A_1) + P(A_2) \times P(A | A_2) + \cdots + P(A_n) \times P(A | A_n)\]
+        Por lo tanto, podemos escribir:
+        \[P(A_i | A) = \frac{P(A_i) \times P(A | A_i)}{P(A_1) \times P(A | A_1) + P(A_2) \times P(A | A_2) + \cdots + P(A_n) \times P(A | A_n)}\]
+        
+    
 \end{document}
