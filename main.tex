@@ -1,19 +1,31 @@
 \documentclass{article}
+\usepackage[dvipsnames,table]{xcolor}  % Load xcolor before tikz
+\usepackage{tikz}
+\usepackage{anyfontsize}
+\usepackage[utf8]{inputenc}
+\usetikzlibrary{calc}
+\usepackage{listings}
 \usepackage[spanish]{babel}
 \usepackage{float}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{multicol}
-\usepackage[colorlinks=true, linkcolor=black, citecolor=black, urlcolor=black]{hyperref}
-\usepackage{graphicx} % Para incluir imágenes
-\usepackage{enumitem} % Para personalizar listas
+\usepackage[bookmarks=true, colorlinks=true, linkcolor=black, citecolor=black, urlcolor=black]{bookmark}  % Configure bookmarks with hyperlink colors
+\usepackage{graphicx}  % Para incluir imágenes
+\usepackage{enumitem}  % Para personalizar listas
+
+% Define custom colors
+\definecolor{Dandelion}{rgb}{0.94, 0.88, 0.19}
+\definecolor{RoyalBlue}{rgb}{0.25, 0.41, 0.88}
+\definecolor{OrangeRed}{rgb}{1.0, 0.27, 0.0}
+\definecolor{Emerald}{rgb}{0.31, 0.78, 0.47}
 
 \begin{document}
 
 \tableofcontents
 \newpage
 
+\input{include/cover.tex}
 
-
-    
+\section{hola}
 \end{document}
