@@ -2,9 +2,3 @@
 .venv
 *_ipynb.md
 *_ipynb_files/
-main.synctex.gz 
-main.out 
-main.log 
-main.fls 
-main.fdb_latexmk 
-main.aux
